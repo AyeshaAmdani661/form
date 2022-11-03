@@ -2,14 +2,14 @@ let register = document.querySelector('#register');
 let register_portal = document.querySelector('#register-portal');
 let login_portal = document.querySelector('#login-portal');
 let login = document.querySelector('#login');
-let createAccount = document.querySelector('#createAccount');
 let signupEmail = document.querySelector('#email');
 let signupPassword = document.querySelector('#password');
 let loginEmail = document.querySelector('#loginEmail');
 let loginPassword = document.querySelector('#loginPassword');
 let loginBtn = document.querySelector('#loginBtn');
+let createAccount = document.querySelector('#createAccount');
 let skill = document.querySelector('#skill');
-
+let addSkill = document.querySelector("#addSkill");
 
 let dataOfEmail = [];
 let dataOfPassword = [];
@@ -37,6 +37,7 @@ createAccount.addEventListener('click', () => {
     dataOfPassword.push(signupPassword.value);
     signupEmail.value = "";
     signupPassword.value = "";
+    getItemValue();
 });
 
 loginBtn.addEventListener('click', () => {
@@ -67,3 +68,19 @@ loginBtn.addEventListener('click', () => {
         loginPassword.nextElementSibling.innerText = 'Please fill both the fields';
     }
 });
+getItemValue = () => {
+    console.log(skill.value)
+    addItem(skill.value);
+    skill.value = "";
+}
+const addItem = (item) => {
+    var listItem = document.createElement("li");
+    listItem.innerHTML = `${item} <i class="fas fa-times delete"></i>`;
+    listItem.querySelector(".delete").addEventListener(
+        "click",
+        function () {
+            listItem.remove()
+        }
+    )
+addSkill.appendChild(listItem)
+}

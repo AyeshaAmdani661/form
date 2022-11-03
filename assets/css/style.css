@@ -57,6 +57,7 @@ img{
 }
 .login{
     max-width: 600px;
+    border: 4px solid #000;
 }
 .container{
     max-width: 900px;
@@ -67,4 +68,22 @@ display: none;
 }
 label{
     color: #757575;
+}
+ul{
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+li{
+    margin-right: .5rem;
+    padding: .5rem;
+    background: #e4e4e4;
+    border-radius: .5rem;
+}
+.delete{
+    margin-left: 1rem;
+    color: #646464;
 }
